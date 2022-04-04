@@ -58,3 +58,43 @@ function fizzBuzz(number) {
 }
 
 console.log(fizzBuzz(15));
+
+function anagrams(wordOne, wordTwo) {
+  const arr1 = wordOne.split('').sort().join('');
+  const arr2 = wordTwo.split('').sort().join('');
+
+  return arr1 === arr2 ? true : false;
+
+ 
+}
+
+console.log(anagrams('superintended', 'unpredestined'));
+console.log(anagrams('pictorialness', 'documentarily'));
+
+function uniqueString(strings) {
+  const orderedUnique = strings.map((s) => [...new Set(s)].sort());
+  const duplicate = [...new Set(...orderedUnique)];
+
+  return strings.find((string) => {
+    return duplicate.indexOf(string[0]) === -1;
+  });
+}
+console.log(uniqueString(['Aa', 'aaa', 'aaaa', 'BbBb', 'Aaa', 'AaAaAa', 'a']));
+console.log(uniqueString(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'caba']));
+
+
+function uniqueCharr(string) {
+  const chars = string.split('').sort();
+  for (let i = 0; i < chars.length; i++) {
+    const current = chars[i];
+    const prev = chars[i - 1];
+    const next = chars[i + 1];
+    if(current === prev && current === next) return current;
+  }
+
+  return '_';
+}
+
+console.log(uniqueCharr('abdacbad'));
+console.log(uniqueCharr('abacabaabacaba'));
+console.log(uniqueCharr('abacbad'));
