@@ -37,3 +37,24 @@ function at(arr, index) {
 }
 console.log(at(['a', 'b', 'c', 'd', 'e'], 1));
 console.log(at(['a', 'b', 'c', 'd', 'e'], -2));
+
+function fizzBuzz(number) {
+  const results = [];
+  for (let i = 1; i <= number; i++) {
+
+    if (i % 3 === 0 && i % 5 === 0) {
+      results.push('FizzBuzz');
+    } else if (i % 3 === 0) {
+      results.push('Fizz');
+    } else if (i % 5 === 0) {
+      results.push('Buzz');
+    } else {
+      results.push(i);
+    }
+  }
+
+
+  return results;
+}
+
+console.log(fizzBuzz(15));
